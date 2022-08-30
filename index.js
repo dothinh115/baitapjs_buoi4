@@ -115,6 +115,9 @@ function checkTamGiac(a, b ,c) {
     else if (c * c == a * a + b * b || a * a == b * b + c * c || b * b == a * a + c * c) {
         result += "tam giác vuông";
     }
+    else {
+        result += "tam giác khác";
+    }
     return result;
 }
 
