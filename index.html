@@ -38,7 +38,13 @@
       <form onsubmit="chaoHoi();return false;">
         <div class="form-row">
           <div class="col-2">
-            <input type="text" class="form-control" placeholder="Ai đó?" id="name">
+            <select id="name" class="form-control">
+              <option value="">Ai đó?</option>
+              <option value="M">Mẹ</option>
+              <option value="B">Bố</option>
+              <option value="A">Anh trai</option>
+              <option value="E">Em gái</option>
+            </select>
           </div>
           <div class="col-auto">
             <button class="btn btn-primary">Submit</button>
@@ -86,6 +92,71 @@
             <button class="btn btn-primary">Submit</button>
           </div>
           <div class="col-12" id="result__4">
+          </div>
+        </div>
+      </form>
+      <h1 class="mt-5">
+        TÍNH NGÀY THÁNG NĂM
+      </h1>
+      <form>
+        <div class="form-row">
+          <div class="col-2">
+            <input type="number" class="form-control" placeholder="Ngày" id="ngay">
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control" placeholder="Tháng" id="thang">
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control" placeholder="Năm" id="nam">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary" onclick="tinhHomQua();return false">
+              Hôm Qua
+            </button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary" onclick="tinhNgayMai();return false;">
+              Ngày mai
+            </button>
+          </div>
+          <div class="col-12" id="result__5">
+          </div>
+        </div>
+      </form>
+      <h1 class="mt-5">
+        ĐẾM NGÀY
+      </h1>
+      <form onsubmit="demNgay();return false;">
+        <div class="form-row">
+          <div class="col-2">
+            <input type="number" class="form-control" placeholder="Tháng" id="demThang">
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control" placeholder="Năm" id="demNam">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <div class="col-12" id="result__6">
+          </div>
+        </div>
+      </form>
+      <h1 class="mt-5">
+        ĐỌC SỐ
+      </h1> 
+      <form onsubmit="docSo();return false;">
+        <div class="form-row">
+          <div class="col-3">
+            <input type="number" class="form-control" placeholder="Nhập số có 3 chữ số" id="nhapSo">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <div class="col-12" id="result__7">
           </div>
         </div>
       </form>
