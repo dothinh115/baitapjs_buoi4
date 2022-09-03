@@ -177,32 +177,42 @@ function doanHomQua (a, b, c) {
     var ngay;
     var thang;
     var nam;
-    if (a == 1 && b == 1) {
-        ngay = 31;
-        thang = 12;
-        nam = c - 1
-    }
-    else if (a == 1 && b == 2 || b == 4 || b == 6 || b == 9 || b == 11) {
-        ngay = 31;
-        thang = b - 1;
-        nam = c;
-    }
-    else if (a == 1 && b == 5 || b == 7 || b == 8 || b == 10 || b == 12) {
-        ngay = 30;
-        thang = b -1;
-        nam = c;
-    }
-    else if (a == 1 ** b == 3) {
-        ngay = 28;
-        thang = 2;
-        nam = c;
+    if(a == 1) {
+        if(b == 1) {
+            ngay = 31;
+            thang = 12;
+            nam = c - 1;
+        }
+        else if(b == 2 || b == 4 || b == 6 || b == 9 || b == 11) {
+            ngay = 31;
+            thang = b - 1;
+            nam = c;
+        }
+        else if (b == 3) {
+            if (c%4 == 0) {
+                ngay = 29;
+            }
+            else {
+                ngay = 28;
+            }
+            thang = 2;
+            nam = c;
+        }
+        else {
+            ngay = 30;
+            thang = b - 1;
+            nam = c;
+        }
     }
     else {
-        ngay = a -1;
+        ngay = a - 1;
         thang = b;
         nam = c;
     }
     result = ngay + "/" + thang + "/" + nam;
+    if (c%4 == 0) {
+        result += " (Năm nhuận)";
+    }
     return result;
 }
 
@@ -213,6 +223,12 @@ function tinhNgayMai () {
     var nam = document.getElementById("nam").value * 1;
     if (ngay <= 0 || thang <= 0 || nam <= 0) {
         result.innerHTML = "Điền ngày tháng năm hợp lý";
+    }
+    else if (thang > 12) {
+        result.innerHTML = "Tháng không được quá 12";
+    }
+    else if (ngay > 31) {
+        result.innerHTML = "Ngày không được quá 31";
     }
     else {
         var ketQua = doanNgayMai(ngay, thang, nam);
@@ -227,6 +243,12 @@ function tinhHomQua () {
     var nam = document.getElementById("nam").value * 1;
     if (ngay <= 0 || thang <= 0 || nam <= 0) {
         result.innerHTML = "Điền ngày tháng năm hợp lý";
+    }
+    else if (thang > 12) {
+        result.innerHTML = "Tháng không được quá 12";
+    }
+    else if (ngay > 31) {
+        result.innerHTML = "Ngày không được quá 31";
     }
     else {
         var ketQua = doanHomQua(ngay, thang, nam);
