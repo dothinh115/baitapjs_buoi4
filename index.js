@@ -221,14 +221,14 @@ function tinhNgayMai () {
     var ngay = document.getElementById("ngay").value * 1;
     var thang = document.getElementById("thang").value * 1;
     var nam = document.getElementById("nam").value * 1;
-    if (ngay <= 0 || thang <= 0 || nam <= 0) {
+    if (ngay <= 0 || thang <= 0 || nam <= 0 || thang > 12 || ngay > 31) {
         result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
-    else if (thang > 12) {
-        result.innerHTML = "Tháng không được quá 12";
+    else if (ngay > 29 && thang == 2) {
+        result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
-    else if (ngay > 31) {
-        result.innerHTML = "Ngày không được quá 31";
+    else if (thang == 4 || thang == 6 || thang == 9 || thang == 11 && ngay == 31) {
+        result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
     else {
         var ketQua = doanNgayMai(ngay, thang, nam);
@@ -241,14 +241,14 @@ function tinhHomQua () {
     var ngay = document.getElementById("ngay").value * 1;
     var thang = document.getElementById("thang").value * 1;
     var nam = document.getElementById("nam").value * 1;
-    if (ngay <= 0 || thang <= 0 || nam <= 0) {
+    if (ngay <= 0 || thang <= 0 || nam <= 0 || thang > 12 || ngay > 31) {
         result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
-    else if (thang > 12) {
-        result.innerHTML = "Tháng không được quá 12";
+    else if (ngay > 29 && thang == 2) {
+        result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
-    else if (ngay > 31) {
-        result.innerHTML = "Ngày không được quá 31";
+    else if (thang == 4 || thang == 6 || thang == 9 || thang == 11 && ngay == 31) {
+        result.innerHTML = "Điền ngày tháng năm hợp lý";
     }
     else {
         var ketQua = doanHomQua(ngay, thang, nam);
