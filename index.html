@@ -33,7 +33,7 @@
         </form>
       </div>
       <h1 class="mt-5">
-        CHÀO HỎI
+        CHÀO HỎI 
       </h1>
       <form onsubmit="chaoHoi();return false;">
         <div class="form-row">
@@ -160,6 +160,72 @@
           </div>
         </div>
       </form>
+      <h1 class="mt-5">
+        TÌM SINH VIÊN XA TRƯỜNG NHẤT
+      </h1>
+      <form onsubmit="timSvXaTruong();return false;">
+        <div class="form-row">
+          <label class="col-1 col-form-label">
+            Sinh viên 1
+          </label>
+          <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Tên" id="sv1__name">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ X" id="sv1__x">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ Y" id="sv1__y">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <label class="col-1 col-form-label">
+            Sinh viên 2
+          </label>
+          <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Tên" id="sv2__name">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ X" id="sv2__x">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ Y" id="sv2__y">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <label class="col-1 col-form-label">
+            Sinh viên 3
+          </label>
+          <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Tên" id="sv3__name">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ X" id="sv3__x">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ Y" id="sv3__y">
+          </div>
+        </div>
+        <div class="form-row mt-2">
+          <label class="col-1 col-form-label">
+            Trường
+          </label>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ X" id="truong__x">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" placeholder="Tọa độ Y" id="truong__y">
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <div class="col-12" id="result__8"></div>
+        </div>
+        
+      </form>
+
     </div>
       
     <!-- Optional JavaScript -->

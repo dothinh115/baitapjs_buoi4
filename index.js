@@ -346,3 +346,42 @@ function docSo() {
         result.innerHTML = ketQua;
     }
 }
+
+//TÌM SV XA TRƯỜNG NHẤT
+function tinhQuangDuong(truong_x, truong_y, sv_x, sv_y) {
+    var quangDuong = Math.sqrt((truong_x - sv_x) * (truong_x - sv_x) + (truong_y - sv_y) * (truong_y - sv_y));
+    return quangDuong;
+}
+
+function timSvXaTruong() {
+    var result = document.getElementById("result__8");
+    var sv1__name = document.getElementById("sv1__name").value;
+    var sv1__x = document.getElementById("sv1__x").value * 1;
+    var sv1__y = document.getElementById("sv1__y").value * 1;
+    
+    var sv2__name = document.getElementById("sv2__name").value;
+    var sv2__x = document.getElementById("sv2__x").value * 1;
+    var sv2__y = document.getElementById("sv2__y").value * 1;
+
+    var sv3__name = document.getElementById("sv3__name").value;
+    var sv3__x = document.getElementById("sv3__x").value * 1;
+    var sv3__y = document.getElementById("sv3__y").value * 1;
+
+    var truong__x = document.getElementById("truong__x").value * 1;
+    var truong__y = document.getElementById("truong__y").value * 1;
+
+    var quangDuongSv1 = tinhQuangDuong(truong__x, truong__y, sv1__x, sv1__y);
+    var quangDuongSv2 = tinhQuangDuong(truong__x, truong__y, sv2__x, sv2__y);
+    var quangDuongSv3 = tinhQuangDuong(truong__x, truong__y, sv3__x, sv3__y);
+
+    if (quangDuongSv1 > quangDuongSv2 && quangDuongSv1 > quangDuongSv3) {
+        result.innerHTML = "Sinh viên " + sv1__name + " xa trường nhất";
+    }
+    else if (quangDuongSv2 > quangDuongSv1 && quangDuongSv2 > quangDuongSv3) {
+        result.innerHTML = "Sinh viên " + sv2__name + " xa trường nhất";
+
+    }
+    else if (quangDuongSv3 > quangDuongSv1 && quangDuongSv3 > quangDuongSv2) {
+        result.innerHTML = "Sinh viên " + sv3__name + " xa trường nhất";
+    }
+}
